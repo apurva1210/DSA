@@ -1,5 +1,3 @@
-package DataStructures.LinkedList.singly;
-
 public class SinglyLinkedList {
 
     private Node head;
@@ -35,25 +33,27 @@ public class SinglyLinkedList {
         singlyLinkedList.insertNode(6);
         singlyLinkedList.printLinkedList();
     }
+
+    class Node{
+        private Node nextNode;
+        private int data;
+
+        public Node(int data) {
+            this.data = data;
+        }
+
+        public void setNextNode(Node nextNode) {
+            this.nextNode = nextNode;
+        }
+
+        public Node getNextNode() {
+            return nextNode;
+        }
+
+        public int getData() {
+            return data;
+        }
+    }
 }
 
-class Node{
-    private Node nextNode;
-    private int data;
 
-    public Node(int data) {
-        this.data = data;
-    }
-
-    public void setNextNode(Node nextNode) {
-        this.nextNode = nextNode;
-    }
-
-    public Node getNextNode() {
-        return nextNode;
-    }
-
-    public int getData() {
-        return data;
-    }
-}
