@@ -2,56 +2,40 @@ public class SinglyLinkedList {
 
     private Node head;
 
-    public void insertNode(int data){
-        //if list is empty
-        if(this.head == null){
-            this.head = new Node(data);
-        }else{
-            //if list is not empty
+    public void addNode(int data){
+        //if the list is empty
+        if(head == null){
+            head = new Node(data);
+        }else {
+            //if the list is not empty
             Node newNode = new Node(data);
-            newNode.setNextNode(this.head);
-            this.head = newNode;
+            newNode.next = head;
+            head = newNode;
         }
     }
 
-    public void deleteNode(){
-
-    }
-
-    public void printLinkedList(){
-            Node node = head;
-            while(node!= null){
-                System.out.println(node.getData());
-                node = node.getNextNode();
-            }
+    public void printList(){
+        Node node = head;
+        while(node!= null){
+            System.out.println(node.data);
+            node = node.next;
+        }
     }
 
     public static void main(String[] args) {
-        SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
-        singlyLinkedList.insertNode(4);
-        singlyLinkedList.insertNode(5);
-        singlyLinkedList.insertNode(6);
-        singlyLinkedList.printLinkedList();
+        SinglyLinkedList linkedList = new SinglyLinkedList();
+        linkedList.addNode(2);
+        linkedList.addNode(5);
+        linkedList.addNode(6);
+        linkedList.printList();
     }
 
     class Node{
-        private Node nextNode;
         private int data;
+        private Node next;
 
         public Node(int data) {
             this.data = data;
-        }
-
-        public void setNextNode(Node nextNode) {
-            this.nextNode = nextNode;
-        }
-
-        public Node getNextNode() {
-            return nextNode;
-        }
-
-        public int getData() {
-            return data;
         }
     }
 }
