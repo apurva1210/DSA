@@ -1,25 +1,29 @@
+package DataStructure.SinglyLinkedList;
+
 public class SinglyLinkedList {
 
-    private Node head;
+
+    public ListNode head;
 
     public void addNode(int data){
         //if the list is empty
         if(head == null){
-            head = new Node(data);
+            head = new ListNode(data);
         }else {
             //if the list is not empty
-            Node newNode = new Node(data);
-            newNode.next = head;
-            head = newNode;
+            ListNode newListNode = new ListNode(data);
+            newListNode.next = head;
+            head = newListNode;
         }
     }
 
     public void printList(){
-        Node node = head;
-        while(node!= null){
-            System.out.println(node.data);
-            node = node.next;
+        ListNode listNode = head;
+        while(listNode != null){
+            System.out.print(listNode.val);
+            listNode = listNode.next;
         }
+        System.out.println();
     }
 
     public static void main(String[] args) {
@@ -29,15 +33,7 @@ public class SinglyLinkedList {
         linkedList.addNode(6);
         linkedList.printList();
     }
-
-    class Node{
-        private int data;
-        private Node next;
-
-        public Node(int data) {
-            this.data = data;
-        }
-    }
 }
+
 
 
